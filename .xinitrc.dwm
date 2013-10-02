@@ -1,0 +1,4 @@
+#!/bin/bash
+while true; do xsetroot -name "$(date +"%m-%d %R" )";sleep 1m;done &
+xrandr --output HDMI-1 --auto --left-of DVI-I-1
+exec ~/.dwm/startdwm
