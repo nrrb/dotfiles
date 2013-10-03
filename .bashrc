@@ -7,6 +7,7 @@ randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+alias spotify='~/bin/my-spotify 2> /dev/null &'
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
