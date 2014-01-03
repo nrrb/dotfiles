@@ -9,10 +9,12 @@ if [ -f /etc/bashrc ]; then
 fi
 alias spotify='~/bin/my-spotify 2> /dev/null &'
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/bin/virtualenvwrapper.sh
-
 export PS1="\[\a\]\[\e[0;31m\]\u@\h {\[\e[1;32m\]\w\[\e[0;31m\]}\n\[\e[0;31m\]$\[\033[0m\]"
 
 export PATH=~/bin:$PATH
+
+function _update_ps1() {
+       export PS1="$(~/.powerline-shell/powerline-shell.py $? 2> /dev/null)"
+    }
+
+export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"

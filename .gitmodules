@@ -1,3 +1,6 @@
 [submodule ".vim"]
 	path = .vim
-	url = https://github.com/tothebeat/.vim.git
+	url = git@github.com:tothebeat/.vim.git
+[submodule ".powerline-shell"]
+	path = .powerline-shell
+	url = https://github.com/milkbikis/powerline-shell
