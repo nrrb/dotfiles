@@ -1,0 +1,48 @@
+set encoding=utf-8
+
+execute pathogen#infect()
+" http://blog.sanctum.geek.nz/vim-annoyances/
+set backupdir=~/.vim/backup
+set directory=~/.vim/swap
+" damn you, F1! I'm just flailing to hit Escape, I don't want help!
+nnoremap <F1> <nop>
+nnoremap Q <nop>
+nnoremap K <nop>
+" Remove trailing whitespace from every line
+nnoremap <silent> <F2> :%s/\s\+$//e<CR>
+" http://vim.wikia.com/wiki/Highlight_current_line
+:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+" Remap the arrow keys to nothing to force mt to use hjkl for movement 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+set shortmess+=I
+set backspace=indent,eol,start
+set visualbell t_vb=
+set virtualedit=block
+set expandtab
+set tabstop=4
+set shiftwidth=4
+" let g:solarized_termcolors=256
+set background=dark
+colorscheme molokai
+" Show name of file and current path in window title
+set title
+" Tab autocompletion
+" http://stackoverflow.com/questions/526858/how-do-i-make-vim-do-normal-bash-like-tab-completion-for-file-names
+set wildmode=longest,list,full
+set wildmenu
+syntax on
+filetype plugin indent on
+" auto-reload vimrc on changes: http://stackoverflow.com/a/2400289
+augroup myvimrchooks
+    au!
+    autocmd bufwritepost .vimrc source ~/.vimrc
+augroup END
+" Always show status line
+set laststatus=2
+
+let g:airline_powerline_fonts = 1
