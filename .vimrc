@@ -57,6 +57,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sensible'
 Plug 'rstacruz/sparkup'
+Plug 'junegunn/fzf'
+Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 " -- Lightline ---------------------------------------------------------------
